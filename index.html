@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <video id="myVideo" autoplay onended="videoEnded()" controls>
+    <video id="myVideo" autoplay onended="videoEnded()" controls muted>
         <source src="./j-d.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -38,7 +38,9 @@
         video.play()
         video.playbackRate = 1;
 
-
+        video.addEventListener('play', function () {
+            video.muted = false;
+        });
 
         function videoEnded() {
             window.open("https://theknot.com/hinduweddingjayanddanny", "_blank");
