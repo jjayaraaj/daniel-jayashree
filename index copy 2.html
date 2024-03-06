@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel & Jayashree</title>
+    <style>
+        /* Make the video fill the entire page */
+    </style>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+
+</head>
+
+<body>
+    <div id="youtube-player"></div>
+
+    <script>
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-player', {
+                height: '390',
+                width: '640',
+                videoId: '8J6NIyhfFH0', // Replace 'YOUR_VIDEO_ID' with the ID of the YouTube video
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // Play the video when the player is ready
+            event.target.playVideo();
+        }
+
+        function onPlayerStateChange(event) {
+            // Check if the video has ended
+            if (event.data == YT.PlayerState.ENDED) {
+                // Redirect to another website
+                window.location.href = 'https://theknot.com/hinduweddingjayanddanny'; // Replace 'https://example.com' with your desired URL
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
