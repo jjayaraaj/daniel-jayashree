@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel & Jayashree</title>
+    <style>
+        /* Make the video fill the entire page */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        video {
+            display: flex;
+            margin: auto;
+
+            height: 100vh;
+            width: 100vw;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <video id="myVideo" autoplay onended="videoEnded()" controls muted>
+        <source src="./church-wedding.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        var video = document.getElementById("myVideo");
+        video.play()
+        video.playbackRate = 1;
+
+        video.addEventListener('play', function () {
+            video.muted = false;
+        });
+
+        function videoEnded() {
+            // window.open("https://theknot.com/hinduweddingjayanddanny", "_blank");
+
+            window.location.href = "http://theknot.com/danielandjayashree"; // Change this URL to your desired destination
+        }
+    </script>
+
+
+</body>
+
+</html>
